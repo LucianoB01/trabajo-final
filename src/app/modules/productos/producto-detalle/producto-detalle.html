@@ -1,0 +1,20 @@
+@if (producto) {
+  <div class="producto-detalle-container">
+    <div class="header-detalle">
+        <h2>Detalle de {{ producto.nombre }}</h2>
+    </div>
+    
+    <div class="detalle-info">
+        <p><strong>ID:</strong> <span>{{ producto.id }}</span></p>
+        <p><strong>Precio:</strong> <span>{{ producto.precio | currency: 'ARS': 'symbol': '1.2-2' }}</span></p>
+        <p><strong>Descripción:</strong> <span>{{ producto.descripcion }}</span></p>
+        <p><strong>Con descuento:</strong> <span>{{producto.precio | descuentoProducto: producto.descuento | currency: 'ARS': 'symbol': '1.2-2'}}</span></p>
+    </div>
+    
+    <button class="btn-primary" (click)="volver()">Volver a la lista</button>
+  </div>
+} @else {
+  <div class="loading-state">
+    <p>Cargando información del producto...</p>
+  </div>
+}

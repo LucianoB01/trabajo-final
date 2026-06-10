@@ -1,0 +1,20 @@
+@if (usuario) {
+  <div class="detalle-container">
+    <div class="header-detalle">
+        <h2>Detalle de {{ usuario.nombre }}</h2>
+    </div>
+    
+    <div class="detalle-info">
+        <p><strong>ID:</strong> <span>{{ usuario.id }}</span></p>
+        <p><strong>Nombre:</strong> <span>{{ usuario.nombre }}</span></p>
+        <p><strong>Correo electronico:</strong> <span>{{ usuario.email }}</span></p>
+        <p><strong>Rol:</strong> <span>{{ usuario.rol }}</span></p>
+    </div>
+    
+    <button class="btn-primary" (click)="volver()">Volver a la lista</button>
+  </div>
+} @else {
+  <div class="loading-state">
+    <p>Cargando información del usuario...</p>
+  </div>
+}

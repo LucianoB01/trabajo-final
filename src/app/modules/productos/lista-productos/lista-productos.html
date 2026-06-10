@@ -1,0 +1,33 @@
+<div class="product-container">
+    <div class="header">
+        <h1>Lista de productos</h1>
+        <button class="btn-primary" (click)="agregarProductoSimulado()">+ Agregar</button>
+    </div>
+
+    @if(productosList.length > 0){
+        <div class="product-grid">
+            @for(producto of productosList; track producto.id){
+                <div class="product-card">
+                    <h2>{{producto.nombre}}</h2>
+                    <div class="product-details">
+                        <span><strong>Precio:</strong> {{producto.precio | currency: 'ARS': 'symbol': '1.2-2'}}</span>
+                        <span><strong>Descripción:</strong> {{producto.descripcion}}</span>
+                        <span class="discount"><strong>Con descuento:</strong> {{producto.precio | descuentoProducto: producto.descuento | currency: 'ARS': 'symbol': '1.2-2'}}</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-primary" (click)="verDetalleProducto(producto.id)">
+                            Detalle
+                        </button>
+                        <button class="btn-danger" (click)="eliminarProducto(producto.id)">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+    } @else {
+        <div class="empty-state">
+            <p>No hay productos disponibles.</p>
+        </div>
+    }
+</div>
