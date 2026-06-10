@@ -25,7 +25,7 @@ Este proyecto es una aplicación de gestión desarrollada en Angular, correspond
 ## Despliegue
 
 * **Plataforma elegida:** Vercel
-* **Enlace a la aplicación publicada:** [https://tarea-4-neon.vercel.app/](https://tarea-4-neon.vercel.app/)
+* **Enlace a la aplicación publicada:** [https://trabajo-final-blond-alpha.vercel.app/](https://tarea-4-neon.vercel.app/)
 
 ## Créditos del autor
 
